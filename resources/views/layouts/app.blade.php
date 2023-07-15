@@ -18,7 +18,7 @@
             display: none;
         }
     </style>
-
+    @laravelViewsStyles
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -64,5 +64,9 @@
             </div>
         </div>
     </div>
+
+    @laravelViewsScripts
+    @stack('scripts')
+
 </body>
 </html>

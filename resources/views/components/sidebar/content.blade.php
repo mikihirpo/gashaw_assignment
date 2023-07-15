@@ -14,7 +14,17 @@
         </x-slot>
     </x-sidebar.link>
 
-    <x-sidebar.dropdown
+    <x-sidebar.link
+        title="view equipments"
+        href="{{ route('view-property') }}"
+        :isActive="request()->routeIs('view-property')"
+    >
+        <x-slot name="icon">
+            <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+        </x-slot>
+    </x-sidebar.link>
+
+    {{-- <x-sidebar.dropdown
         title="Buttons"
         :active="Str::startsWith(request()->route()->uri(), 'buttons')"
     >
@@ -37,7 +47,7 @@
             href="{{ route('buttons.text-icon') }}"
             :active="request()->routeIs('buttons.text-icon')"
         />
-    </x-sidebar.dropdown>
+    </x-sidebar.dropdown> --}}
 
     <div
         x-transition
@@ -48,7 +58,7 @@
     </div>
 
     @php
-        $links = array_fill(0, 20, '');
+        $links = array_fill(0, 2, '');
     @endphp
 
     @foreach ($links as $index => $link)
